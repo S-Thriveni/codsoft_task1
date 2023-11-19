@@ -1,0 +1,39 @@
+import java.util.Scanner;
+import java.lang.Math;
+public class games
+{
+public static void main(String[] args)
+{
+int answer=(int)(Math.random()*100)+1;
+int n=6;
+boolean correct=false;
+Scanner sc=new Scanner(System.in);
+System.out.println("Think of a number between 1-100");
+System.out.println("Good Luck!!\n Try guessing the correct answer as u hav only 6 trials to go");
+while(n>0)
+{
+System.out.println("Take a Guess!!");
+int guess=sc.nextInt();
+if (guess == answer) 
+{
+    System.out.println("You guessed right!!\n You won");
+    correct = true; // Set correct to true when the user guesses correctly
+    break;
+}
+else if(guess>answer)
+{
+System.out.println("OOPS!!, Your guess is too high\nYou have "+(n-1)+" tries left");
+}
+else
+{
+System.out.println("OOPS!!, Your guess is too low\nYou have "+(n-1)+" tries left");
+}
+n--;
+
+}
+if(correct==false)
+{
+System.out.println("You ran out of tries.\n You lost the Game");
+}
+}
+}
